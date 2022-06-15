@@ -43,6 +43,7 @@ elif user_choice == "2":
   print(scissors)
 else:
   print("Wrong choice, loser!")
+  quit()
 
 computer_choice = str(random.randint(0, 2))
 print("Computer chooses: " + computer_choice)
