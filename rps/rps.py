@@ -41,6 +41,8 @@ elif user_choice == "1":
 elif user_choice == "2":
   user_choice = element_matrix[2]
   print(scissors)
+else:
+  print("Wrong choice, loser!")
 
 computer_choice = str(random.randint(0, 2))
 print("Computer chooses: " + computer_choice)
@@ -54,9 +56,6 @@ elif computer_choice == "1":
 elif computer_choice == "2":
   computer_choice = element_matrix[2]
   print(scissors)
-
-#final_choice = [user_choice, computer_choice]
-#print(final_choice)
 
 if(user_choice == computer_choice):
   print("It is a tie")
