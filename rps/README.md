@@ -1,2 +1,2 @@
-Get github access token(no permissions required)
-pipenv run python rps.py
+1. Get github access token(no permissions required)
+2. pipenv run python rps.py
