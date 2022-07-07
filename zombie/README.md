@@ -1,4 +1,4 @@
-# Python-Bootcamp
+# Zombie Game
 This is a game where user gets a chance to not die
 
 To run the game follow the instructions:

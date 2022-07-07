@@ -26,41 +26,42 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
-import random
+from random import choice
 
-element_matrix = ["rock", "paper", "scissors"]
+choices = ["rock", "paper", "scissors"]
 
 user_choice = str(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. "))
 
-if user_choice == "0":
-  user_choice = element_matrix[0]
-  print(rock)
-elif user_choice == "1":
-  user_choice = element_matrix[1]
-  print(paper)
-elif user_choice == "2":
-  user_choice = element_matrix[2]
-  print(scissors)
-else:
-  print("Wrong choice, loser!")
-  quit()
+match user_choice:
+    case "0":
+        user_choice = choices[0]
+        print(rock)
+    case "1":
+        user_choice = choices[1]
+        print(paper)
+    case "2":
+        user_choice = choices[2]
+        print(scissors)
+    case _:
+        print("Wrong choice, loser!")
+        quit()
 
-computer_choice = str(random.randint(0, 2))
-print("Computer chooses: " + computer_choice)
+computer_choice_index = choice(range(len(choices)))
+computer_choice = choices[computer_choice_index]
 
-if computer_choice == "0":
-  computer_choice = element_matrix[0]
-  print(rock)
-elif computer_choice == "1":
-  computer_choice = element_matrix[1]
-  print(paper)
-elif computer_choice == "2":
-  computer_choice = element_matrix[2]
-  print(scissors)
+print(f"Computer chooses: {computer_choice}")
 
-if(user_choice == computer_choice):
-  print("It is a tie")
-elif((user_choice == "rock" and computer_choice == "paper") or (user_choice == "paper" and computer_choice == "scissors") or user_choice == "scissors" and computer_choice == "rock"):
-  print("You lose.")
-elif((user_choice == "rock" and computer_choice == "scissors") or (user_choice == "paper" and computer_choice == "rock") or user_choice == "scissors" and computer_choice == "paper"):
-  print("You win.")
+match computer_choice_index:
+    case 0:
+        print(rock)
+    case 1:
+        print(paper)
+    case 2:
+        print(scissors)
+
+if user_choice == computer_choice:
+    print("It is a tie")
+elif (user_choice == "rock" and computer_choice == "paper") or (user_choice == "paper" and computer_choice == "scissors") or (user_choice == "scissors" and computer_choice == "rock"):
+    print("You lose.")
+elif (user_choice == "rock" and computer_choice == "scissors") or (user_choice == "paper" and computer_choice == "rock") or (user_choice == "scissors" and computer_choice == "paper"):
+    print("You win.")
